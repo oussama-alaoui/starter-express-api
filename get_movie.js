@@ -22,7 +22,7 @@ async function parseHTML(html) {
   const year = $('div.font-size-16.text-white:nth-of-type(6) span').text().split(':')[1].trim();
   const dure = $('div.font-size-16.text-white:nth-of-type(7) span').text().split(':')[1].trim();
   const link = $('.bg-primary2').find('a').attr('href');
-  const imgSrc = $('.widget-style-1').find('img').attr('src');
+  const imgSrc = $('.col-lg-3 ').find('img').attr('src');
   const name = $('.col-lg-7 ').find('h1').text().trim();
   const description = $('.widget-style-1').find('p').text().trim();
   const cast = [];
