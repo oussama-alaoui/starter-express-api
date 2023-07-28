@@ -22,6 +22,8 @@ async function parseHTML(html) {
   const year = $('div.font-size-16.text-white:nth-of-type(6) span').text().split(':')[1].trim();
   const dure = $('div.font-size-16.text-white:nth-of-type(7) span').text().split(':')[1].trim();
   const link = $('.bg-primary2').find('a').attr('href');
+  const imgSrc = $('.widget-style-1').find('img').attr('src');
+  const name = $('.widget-style-1').find('h1').text().trim();
   const description = $('.widget-style-1').find('p').text().trim();
   const cast = [];
   $('div.widget-body.row div.entry-box a').each((index, element) => {
@@ -43,6 +45,8 @@ async function parseHTML(html) {
   movie_info.link = link;
   movie_info.description = description;
   movie_info.cast = cast;
+  movie_info.imgSrc = imgSrc;
+  movie_info.name = name;
 
   const jsonData = {
     movie_info
