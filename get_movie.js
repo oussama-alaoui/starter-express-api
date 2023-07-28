@@ -23,7 +23,7 @@ async function parseHTML(html) {
   const dure = $('div.font-size-16.text-white:nth-of-type(7) span').text().split(':')[1].trim();
   const link = $('.bg-primary2').find('a').attr('href');
   const imgSrc = $('.widget-style-1').find('img').attr('src');
-  const name = $('.widget-style-1').find('h1').text().trim();
+  const name = $('.col-lg-7 ').find('h1').text().trim();
   const description = $('.widget-style-1').find('p').text().trim();
   const cast = [];
   $('div.widget-body.row div.entry-box a').each((index, element) => {
