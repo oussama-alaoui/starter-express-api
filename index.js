@@ -6,8 +6,8 @@ const get_videos_link = require('./get_videos_link');
 const get_movie_byName = require('./get_movie_byName');
 
 // Route to get all movies
-app.get('/movies', async (req, res) => {
-  const movies = await get_all_movies();
+app.get('/movies/page', async (req, res) => {
+  const movies = await get_all_movies(req.query.page);
   console.log("movies:   ", movies);
   res.status(200).send(movies);
 });
