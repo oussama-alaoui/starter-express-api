@@ -2,9 +2,9 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 // Function to fetch HTML content from the API
-async function fetchHTML(page) {
+async function fetchHTML(page, type) {
   try {
-    const response = await axios.get('https://akwam.one/movies?page='+page); // Replace with your API endpoint
+    const response = await axios.get('https://akwam.one/'+type+'?page='+page); // Replace with your API endpoint
     return response.data;
   } catch (error) {
     console.error('Error fetching HTML:', error);
@@ -38,9 +38,9 @@ function parseHTML(html) {
 }
 
 // Main function
-async function main(page) {
+async function main(page, type) {
   try {
-    const html = await fetchHTML(page);
+    const html = await fetchHTML(page, type);
     const jsonData = parseHTML(html);
     return jsonData; // Return the extracted data in JSON format
   } catch (error) {
