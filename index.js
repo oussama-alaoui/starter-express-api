@@ -13,9 +13,9 @@ app.get('/movies/:page/:type', async (req, res) => {
 });
 
 // Route to get a movie by link
-app.get('/movies/:code/:name', async (req, res) => {
-  const link = req.params.link;
+app.get('/movie/:code/:name', async (req, res) => {
   const movie = await get_movie(req.params.code, req.params.name);
+  console.log("movie:   ", movie);
   res.status(200).send(movie);
 });
 
