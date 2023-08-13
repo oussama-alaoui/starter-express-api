@@ -70,13 +70,12 @@ async function parseHTML2(html) {
 // Main function
 async function main(code, name) {
   try {
-    const link = `https://akwam.us/movie/8936/kill-shot`;
+    const link = `https://akwam.cz/movie/${code}/${name}`;
     const html = await fetchHTML(link);
     const jsonData = await parseHTML(html);
     const html2 = await fetchHTML(jsonData.movie_info.link);
     const direct_link = await parseHTML2(html2);
     jsonData.movie_info.direct_link = direct_link;
-    console.log("jsonData:   ", jsonData);
     return jsonData; // Return the extracted data in JSON format
   } catch (error) {
     console.error('An error occurred:');
